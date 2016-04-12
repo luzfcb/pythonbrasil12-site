@@ -18,7 +18,7 @@ install:
 - pip2 install --upgrade pip setuptools
 # - pip2 install -r requirements.txt
 - pip2 install --upgrade ansible
-- sudo make ansible-setup
+- sudo ansible-playbook ansible/setup.yml
 #add the rest of setup here
 script:
 - make html
