@@ -1,0 +1,7 @@
+# ubuntu 14.04 dependencies
+libxslt1-dev
+libxml2-dev
+ruby-sass
+nodejs
+npm
+
