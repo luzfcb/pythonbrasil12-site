@@ -7,7 +7,7 @@
   #  fullname: Magnun Leno
 
   vars_files:
-      - "vars/packages-{{ ansible_os_family }}.yml"
+      - "vars/packages-{{ ansible_distribution }}.yml"
 
   tasks:
     - set_fact: shellrc="~/.zshrc"
@@ -16,11 +16,11 @@
     - set_fact: shellrc="~/.bashrc"
       when: ansible_user_shell == "/bin/bash"
 
-    - name: Install OS Requred packages
-      with_items: "{{ os_packages }}"
-      action: "{{ ansible_pkg_mgr }} state=installed name={{ item }}"
+    - name: Install OS Required packages
+      package: name={{ item }} state=present
       become: yes
       become_method: sudo
+      with_items: "{{ os_packages }}
       tags: os-requirements-pkgs
 
     - name: Install Gulp
