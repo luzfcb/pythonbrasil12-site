@@ -20,7 +20,7 @@
       package: name={{ item }} state=present
       become: yes
       become_method: sudo
-      with_items: "{{ os_packages }}
+      with_items: "{{ os_packages }}"
       tags: os-requirements-pkgs
 
     - name: Install Gulp
