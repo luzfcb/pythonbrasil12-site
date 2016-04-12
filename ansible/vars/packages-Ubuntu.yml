@@ -2,7 +2,7 @@ os_packages:
   - virtualenvwrapper
   - libxslt1-dev
   - libxml2-dev
-  - rubygem-sass
+  - ruby-sass
   - nodejs
   - npm
 
