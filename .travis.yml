@@ -20,6 +20,7 @@ before_install:
 
 install:
 - sudo ./install_os_dependencies.sh install
+- sudo npm install --global gulp gulp-uglify gulp-concat
 - pip2 install --upgrade pip setuptools
 # - pip2 install -r requirements.txt
 - pip2 install --upgrade ansible
