@@ -25,7 +25,8 @@ install:
 # - pip2 install -r requirements.txt
 - sudo pip2 install --upgrade ansible
 #- pip2 install -r requirements.txt
-- sudo ansible-playbook ansible/setup.yml 
+- sudo ansible-playbook ansible/setup.yml
+- pip2 install -r requirements.txt
 
 #add the rest of setup here
 script:

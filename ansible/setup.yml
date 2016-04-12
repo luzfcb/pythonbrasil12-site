@@ -31,33 +31,33 @@
         - gulp-concat
       tags: gulp
 
-    - name: Checks that WORKON_HOME is present
-      shell: "grep \"^export WORKON_HOME\" {{ shellrc }}"
-      ignore_errors: True
-      register: workon_home
-      tags: virtualenv
+#    - name: Checks that WORKON_HOME is present
+#      shell: "grep \"^export WORKON_HOME\" {{ shellrc }}"
+#      ignore_errors: True
+#      register: workon_home
+#      tags: virtualenv
 
-    - name: Forces WORKON_HOME="~/venv"
-      set_fact: source_mkvirtualenv="WORKON_HOME=\"~/venv\" . /usr/bin/virtualenvwrapper.sh"
-      when: workon_home.rc == 1
-      tags: virtualenv
+#    #- name: Forces WORKON_HOME="~/venv"
+#      set_fact: source_mkvirtualenv="WORKON_HOME=\"~/venv\" . /usr/bin/virtualenvwrapper.sh"
+#      when: workon_home.rc == 1
+#      tags: virtualenv
 
-    - name: Uses WORKON_HOME variable defined in environment
-      set_fact: source_mkvirtualenv=". /usr/bin/virtualenvwrapper.sh"
-      when: workon_home.rc == 0
-      tags: virtualenv
+#    - name: Uses WORKON_HOME variable defined in environment
+#      set_fact: source_mkvirtualenv=". /usr/bin/virtualenvwrapper.sh"
+#      when: workon_home.rc == 0
+#      tags: virtualenv
 
-    - name: Remove any old virtualenv with this name
-      shell: "{{ source_mkvirtualenv }} && rmvirtualenv pybr12-site"
-      ignore_errors: True
-      register: workon_home
-      tags: virtualenv
+#    - name: Remove any old virtualenv with this name
+#      shell: "{{ source_mkvirtualenv }} && rmvirtualenv pybr12-site"
+#      ignore_errors: True
+#      register: workon_home
+#      tags: virtualenv
 
-    - name: Creates virtualenv
-      shell: "{{ source_mkvirtualenv }} && mkvirtualenv pybr12-site"
-      tags: virtualenv
+#    - name: Creates virtualenv
+#      shell: "{{ source_mkvirtualenv }} && mkvirtualenv pybr12-site"
+#      tags: virtualenv
 
-    - name: Install requirements
-      shell: "{{ source_mkvirtualenv }} && workon pybr12-site && pip install -r ../requirements.txt"
-      tags: virtualenv
+#    - name: Install requirements
+#      shell: "{{ source_mkvirtualenv }} && workon pybr12-site && pip install -r ../requirements.txt"
+#      tags: virtualenv
    
