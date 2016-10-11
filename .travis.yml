@@ -11,11 +11,6 @@ language: python
 #- git remote set-url origin git@github.com:pythonbrasil/pythonbrasil12-site.git
 #- git fetch origin -f master:master
 
-before_script:
-  - npm install -g gulp gulp-uglify gulp-concat
-  - gem install sass
-  - ls -la 
-
 script:
   - git status
   - make publish
@@ -23,9 +18,14 @@ script:
   - ls -la
 
 
-#install:
-#- pip install --upgrade pip
-#- pip install -r requirements.txt
+install:
+  - cd theme
+  - npm install -g
+  - cd ..
+  - gem install sass
+  - ls -la 
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
 #add the rest of setup here
 #script:
 #- make github
