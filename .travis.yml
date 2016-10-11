@@ -13,10 +13,15 @@ language: python
 
 before_script:
   - npm install -g gulp gulp-uglify gulp-concat
+  - gem install sass
   - ls -la 
 
 script:
+  - git status
   - make publish
+  - git status
+  - ls -la
+
 
 #install:
 #- pip install --upgrade pip
