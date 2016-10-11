@@ -16,7 +16,7 @@ before_script:
   - ls -la 
 
 script:
-  - make html
+  - make publish
 
 #install:
 #- pip install --upgrade pip
